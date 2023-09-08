@@ -7,7 +7,7 @@ https://geditor.shiki.online
 （请尽可能遍历该网站自带的资源）  
 
 2、  
-导出HAR文件到当前目录  
+导出 geditor.shiki.online.har 文件到当前目录  
 ![2](READMEpic/2.png)  
 
 3、  
@@ -15,7 +15,7 @@ https://geditor.shiki.online
 ```
 node har-to-files.js
 ```
-会生成 output 文件夹，里面就是抓取的资源了。  
+会生成 ouput 文件夹，里面就是抓取的资源了。  
 
 4、  
 在Cloudflare创建应用程序  
