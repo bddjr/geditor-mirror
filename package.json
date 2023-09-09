@@ -4,11 +4,13 @@
   "description": "",
   "main": "har-to-files.js",
   "scripts": {
-    "build": "rimraf ./build && mkdirp ouput && node har-to-files.js"
+    "build": "rimraf ./ouput && mkdirp ouput && node har-to-files.js"
   },
   "author": "",
   "license": "",
   "dependencies": {
+    "mkdirp": "^3.0.1",
+    "rimraf": "^5.0.1",
     "uglify-js": "^3.17.4"
   }
 }
