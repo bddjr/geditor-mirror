@@ -1,0 +1,14 @@
+{
+  "name": "geditor-mirror",
+  "version": "",
+  "description": "",
+  "main": "har-to-files.js",
+  "scripts": {
+    "build": "rimraf ./build && mkdirp ouput && node har-to-files.js"
+  },
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "uglify-js": "^3.17.4"
+  }
+}

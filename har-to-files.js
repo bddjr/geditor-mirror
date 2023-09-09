@@ -1,7 +1,10 @@
 // node har-to-files.js
 
+//(async()=>{
+
 const fs = require('fs');
 const path = require('path');
+const UglifyJS = require("uglify-js");
 
 const input_file_name = path.join(__dirname,
     'geditor.shiki.online.har'
@@ -42,8 +45,18 @@ for(let i of har_entries){
         }
     }
     let writetext = response_content.text;
-    if (response_content.encoding == 'base64'){
-        //writetext = Buffer.from(writetext, 'base64').toString('utf-8');
+    if (writetext === undefined) continue;
+    if (url.pathname.endsWith('.js')){
+        fs.writeFileSync(
+            writepath,
+            UglifyJS.minify(
+                response_content.encoding == 'base64'
+                ? Buffer.from(writetext, 'base64').toString('utf-8')
+                : writetext
+            ).code
+        );
+    }else if (response_content.encoding == 'base64'){
+        writetext = Buffer.from(writetext, 'base64');
         fs.writeFileSync(
             writepath,
             (Buffer.from(writetext, 'base64')),
@@ -54,3 +67,5 @@ for(let i of har_entries){
     }
     read_finished_pathnames.push(url.pathname);
 }
+
+//})();

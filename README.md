@@ -13,14 +13,7 @@ https://geditor.shiki.online
 3、  
 预先安装Nodejs，然后在当前目录运行命令
 ```
-node har-to-files.js
+npm install
+npm run build
 ```
-会生成 ouput 文件夹，里面就是抓取的资源了。  
-
-4、  
-在Cloudflare创建应用程序  
-![4](READMEpic/4.png)  
-
-5、  
-在Cloudflare创建Pages  
-![5](READMEpic/5.png)  
+会生成 ouput 文件夹，里面就是镜像站需要挂载的静态资源。  
