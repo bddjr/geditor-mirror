@@ -1,5 +1,3 @@
-// node har-to-files.js
-
 // 是否开启不压缩模式
 const dev_mode = false;
 
@@ -18,6 +16,12 @@ const input_file_name = path.join(__dirname,
 const ouput_file_pathname = path.join(__dirname,
     // 输出文件夹名称
     'ouput'
+);
+
+console.log('copy 404.html');
+fs.copyFileSync(
+    path.join(__dirname, '404.html'),
+    path.join(ouput_file_pathname, '404.html')
 );
 
 const har_data = JSON.parse( fs.readFileSync(input_file_name).toString() ).log;
